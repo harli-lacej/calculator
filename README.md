@@ -1,2 +1,2 @@
-# repo-calculator
+# calculator
 Calculator using Vanilla JavaScript.
