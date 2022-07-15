@@ -317,29 +317,11 @@ h1{
     cursor: pointer;
 }
 
-#calculator-root{
-  display:inline-block;
-  margin-right:90%;
-  margin-top:-385%;
-  text-align:center;
-  vertical-align: middle;
-  line-height:70px; 
-  background-color: #494238;
-  width:70px;
-  height:70px;
-  border-radius:35px;
-  color:#EAAF2C;
-  justify-content: center;
-  font-family:'Montserrat', sans-serif;
-  font-size:20px;
-  font-weight:bold;
-  cursor: pointer;
-}
 
 #calculator-percent{
   display:inline-block;
   margin-left:25%;
-  margin-top:-395%;
+  margin-top:-400%;
   text-align:center;
   vertical-align: middle;
   line-height:70px; 
@@ -355,10 +337,10 @@ h1{
   cursor: pointer;
 }
 
-#calculator-plus-minus{
+#calculator-root{
   display:inline-block;
   margin-left:50%;
-  margin-top:-405%;
+  margin-top:-390%;
   text-align:center;
   vertical-align: middle;
   line-height:70px; 
@@ -377,7 +359,7 @@ h1{
 #calculator-division{
   display:inline-block;
     margin-left:77%;
-    margin-top:-415%;
+    margin-top:-412%;
     text-align:center;
     vertical-align: middle;
     line-height:70px; 
