@@ -114,6 +114,7 @@ document.getElementById('calculator-delete').onclick = function(e){
     let str=document.getElementById('calculator-calculation').textContent;
     str = str.substring(0, str.length - 1);
     document.getElementById('calculator-calculation').textContent=str;
+    document.getElementById('calculator-result').textContent='';
 }
 
 document.getElementById('calculator-c').onclick = function(e){
@@ -134,6 +135,8 @@ document.getElementById("calculator-equal").onclick = function(e){
     let count2 = str.split('+').length - 1;
     let count3 = str.split('/').length - 1;
     let count4 = str.split('x').length - 1;
+    let count5 = str[0];
+    console.log(count5);
     if(count===1 && count2===0 && count3===0 && count4===0){
         let num1=str.substring(0, str.indexOf('-'));
         let num2=str.substring(str.indexOf('-') + 1);
@@ -160,6 +163,13 @@ document.getElementById("calculator-equal").onclick = function(e){
         let num2=str.substring(str.indexOf('x') + 1);
         let res=parseInt(num1)*parseInt(num2);
         document.getElementById('calculator-result').textContent="="+res;
+
+    }
+    if(count===0 && count2===0 && count3===0 && count4===0 && count5==="√"){
+        let num=str.substring(str.indexOf('√') + 1);
+        let res=Math.sqrt(parseInt(num));
+        const res_round=Math.round(res * 100) / 100
+        document.getElementById('calculator-result').textContent="="+res_round;
 
     }
 }
