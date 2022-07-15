@@ -1,5 +1,6 @@
 /*Title:Calculator App
-Author:Harli Lacej*/
+Author:Harli Lacej
+Date:15/07/2022*/
 document.getElementById('calculator-one').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
@@ -55,7 +56,7 @@ document.getElementById('calculator-plus').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
     let text=document.getElementById('calculator-calculation').textContent;
-    if(text[text.length-1]==='-' || text[text.length-1]==='x' || text[text.length-1]==='/' || text[text.length-1]==='.'){
+    if(text[text.length-1]==='-' || text[text.length-1]==='x' || text[text.length-1]==='/' || text[text.length-1]==='.' || text[text.length-1]==='+' || text===''){
     }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', '+');
     }
@@ -64,7 +65,7 @@ document.getElementById('calculator-minus').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
     let text=document.getElementById('calculator-calculation').textContent;
-    if(text[text.length-1]==='+' || text[text.length-1]==='x' || text[text.length-1]==='/'|| text[text.length-1]==='.'){
+    if(text[text.length-1]==='+' || text[text.length-1]==='x' || text[text.length-1]==='/'|| text[text.length-1]==='.' || text[text.length-1]==='-' || text===''){
     }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', '-');
     }
@@ -73,7 +74,7 @@ document.getElementById('calculator-division').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
     let text=document.getElementById('calculator-calculation').textContent;
-    if(text[text.length-1]==='+' || text[text.length-1]==='x' || text[text.length-1]==='-'|| text[text.length-1]==='.'){
+    if(text[text.length-1]==='+' || text[text.length-1]==='x' || text[text.length-1]==='-'|| text[text.length-1]==='.' || text[text.length-1]==='/'|| text===''){
     }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', '/');
     }
@@ -83,7 +84,7 @@ document.getElementById('calculator-multiply').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
     let text=document.getElementById('calculator-calculation').textContent;
-    if(text[text.length-1]==='+' || text[text.length-1]==='/' || text[text.length-1]==='-'|| text[text.length-1]==='.'){
+    if(text[text.length-1]==='+' || text[text.length-1]==='/' || text[text.length-1]==='-'|| text[text.length-1]==='.' || text[text.length-1]==='x'|| text===''){
     }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', 'x');
     }
@@ -92,7 +93,7 @@ document.getElementById('calculator-point').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
     let text=document.getElementById('calculator-calculation').textContent;
-    if(text[text.length-1]==='+' || text[text.length-1]==='/' || text[text.length-1]==='-'|| text[text.length-1]==='x'){
+    if(text[text.length-1]==='+' || text[text.length-1]==='/' || text[text.length-1]==='-'|| text[text.length-1]==='x' || text[text.length-1]==='.'|| text===''){
     }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', '.');
     }
@@ -100,7 +101,12 @@ document.getElementById('calculator-point').onclick = function(e){
 document.getElementById('calculator-percent').onclick = function(e){
     e.stopPropagation();
     e.preventDefault();
+    let text=document.getElementById('calculator-calculation').textContent;
+    if(text===''){
+    }else{
     document.getElementById('calculator-calculation').insertAdjacentText('beforeend', 'x100');
+    }
+   
 }
 document.getElementById('calculator-root').onclick = function(e){
     e.stopPropagation();
@@ -136,32 +142,31 @@ document.getElementById("calculator-equal").onclick = function(e){
     let count3 = str.split('/').length - 1;
     let count4 = str.split('x').length - 1;
     let count5 = str[0];
-    console.log(count5);
     if(count===1 && count2===0 && count3===0 && count4===0){
         let num1=str.substring(0, str.indexOf('-'));
         let num2=str.substring(str.indexOf('-') + 1);
-        let res=parseInt(num1)-parseInt(num2);
+        let res=parseFloat(num1)-parseFloat(num2);
         document.getElementById('calculator-result').textContent="="+res;
 
     }
     if(count===0 && count2===1 && count3===0 && count4===0){
         let num1=str.substring(0, str.indexOf('+'));
         let num2=str.substring(str.indexOf('+') + 1);
-        let res=parseInt(num1)+parseInt(num2);
+        let res=parseFloat(num1)+parseFloat(num2);
         document.getElementById('calculator-result').textContent="="+res;
 
     }
     if(count===0 && count2===0 && count3===1 && count4===0){
         let num1=str.substring(0, str.indexOf('/'));
         let num2=str.substring(str.indexOf('/') + 1);
-        let res=parseInt(num1)/parseInt(num2);
+        let res=parseFloat(num1)/parseFloat(num2);
         document.getElementById('calculator-result').textContent="="+res;
 
     }
     if(count===0 && count2===0 && count3===0 && count4===1){
         let num1=str.substring(0, str.indexOf('x'));
         let num2=str.substring(str.indexOf('x') + 1);
-        let res=parseInt(num1)*parseInt(num2);
+        let res=parseFloat(num1)*parseFloat(num2);
         document.getElementById('calculator-result').textContent="="+res;
 
     }
